@@ -6,7 +6,7 @@ AuditBountyManager 是一个面向安全审计与漏洞奖励体系的链上激�
 该模块提供可升级的奖励基础设施，使协议能够以结构化方式进行安全激励，
 并确保奖励的发放过程具备可追踪性、可量化性与资金安全性。
 
-**🌐 愿景 Vision**
+**🌐愿景 Vision**
 
 在 Web3 世界里，安全不是附属品，而是底层算力的另一种形式。
 AegisAuditBounty 的使命，是让每一条关键的安全建议、每一次负责任披露，都能够得到明确、及时、可信的链上回报。
@@ -14,7 +14,7 @@ AegisAuditBounty 的使命，是让每一条关键的安全建议、每一次负
 这不是一个“悬赏池”。
 而是一个 安全经济模型的基础设施模块。
 
-**🛡️ Overview**
+**🛡️Overview**
 
 AuditBountyManager 的设计理念是：
 将奖励的设置与奖励的兑现分离，实现资金透明、激励可验证、流程可审计。
@@ -25,7 +25,7 @@ AuditBountyManager 的设计理念是：
 模块对外表现为一个轻量但稳健的激励层，
 可无缝集成进协议的安全审计流程或漏洞赏金体系。
 
-🔒 核心价值 Key Principles
+**🔒核心价值 Key Principles**
 
 1. 可信激励 Trustworthy Incentives
 
@@ -54,7 +54,7 @@ AuditBountyManager 的设计理念是：
 
 能否增强整体安全弹性
 
-⚡ 合约特性 Features（高层抽象）
+**⚡合约特性 Features（高层抽象）**
 
 链上奖励分配（On-chain Reward Settlement）
 所有奖励经授权后在链上执行，确保可追溯、不可否认。
@@ -68,7 +68,7 @@ AuditBountyManager 的设计理念是：
 权限化控制（Authority-Gated Operations）
 管理侧具备审计通过、奖励发放等高等级操作权限。
 
-🛡️ 生态角色 Ecosystem Roles
+**🛡️生态角色 Ecosystem Roles**
 
 Researchers / White Hats — 负责发现、披露、提升协议安全形态。
 
@@ -78,7 +78,7 @@ Aegis Module — 负责链上激励逻辑的最终执行。
 
 三者构成了一个半开放式安全闭环。
 
-📘 Roadmap（概要）
+**📘Roadmap（概要）**
 
 版本 1：链上奖励结算
 
@@ -88,7 +88,7 @@ Aegis Module — 负责链上激励逻辑的最终执行。
 
 版本 3：自动化风险度量
 
-⚙️ Core Capabilities
+**⚙️Core Capabilities**
 
 1. Multi-Asset Bounty Pools
 
@@ -174,7 +174,7 @@ Pausable 模式
 
 确保资金与状态在极端情况下处于可控状态。
 
-🌐 Data Model & Accounting
+**🌐Data Model & Accounting**
 Multi-Token Accounting
 
 对每种代币维护独立的链上账本，包括：
@@ -187,7 +187,7 @@ pendingRewards[token][user] 用户的可领取奖励余额
 
 所有字段可查询，不依赖链下数据源。
 
-📡 View & Reporting Functions
+**📡View & Reporting Functions**
 
 协议可通过以下视图方法读取完整状态：
 
@@ -199,7 +199,7 @@ getAllKnownTokens()
 
 前端可基于这些接口构建“奖励资金池仪表盘”。
 
-🔐 Operational Flow
+**🔐Operational Flow**
 
 添加奖励资产
 
@@ -227,7 +227,7 @@ getAllKnownTokens()
 
 可生成链上激励报告
 
-🚨 Emergency Handling
+**🚨Emergency Handling**
 
 模块提供安全的应急处理能力：
 
@@ -237,7 +237,7 @@ getAllKnownTokens()
 
 保证已登记的奖励资产不会被误操作清空
 
-🧱 Upgrade Strategy
+**🧱Upgrade Strategy**
 
 合约采用 UUPS 架构，可在未来扩展：
 
@@ -253,7 +253,7 @@ DAO / Module-based 控制模式
 
 模块专门为长期维护生态安全的体系化激励设计。
 
-🧩 免责声明 Disclaimer
+**🧩免责声明 Disclaimer**
 
 AegisAuditBounty 模块提供链上激励结算能力，但不负责定义奖励规则，也不参与审计评分体系。
 所有奖励判定均由项目方或授权实体执行。
