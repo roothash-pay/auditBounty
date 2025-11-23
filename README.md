@@ -1,4 +1,4 @@
-*** AuditBountyManager ***
+## **AuditBountyManager**
 
 AuditBountyManager 是一个面向安全审计与漏洞奖励体系的链上激励模块，
 用于对安全贡献进行透明记录、可验证的奖励分发，以及多资产层面的资金调度管理。
