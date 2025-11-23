@@ -1,0 +1,7 @@
+{
+    "hardhat.solidity.formatter": "forge",
+    "hardhat.solidity.formatterSettings": {
+        "printWidth": 500,
+        "tabWidth": 4
+    }
+}
