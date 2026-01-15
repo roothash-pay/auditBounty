@@ -205,10 +205,10 @@ contract EventRewardManager is Initializable, AccessControlUpgradeable, Reentran
      * - Uses token balance of this contract as source
      * @param token ERC20 token address
      */
-    function claimReward(address token) external nonReentrant whenNotPaused {
+    function claimReward(address rewardAddress, address token) external nonReentrant whenNotPaused {
         require(supportedTokens[token], "Token not supported");
 
-        uint256 pending = pendingRewards[token][msg.sender];
+        uint256 pending = pendingRewards[token][rewardAddress];
         require(pending > 0, "No pending reward");
 
         IERC20 erc20 = IERC20(token);
@@ -216,14 +216,14 @@ contract EventRewardManager is Initializable, AccessControlUpgradeable, Reentran
         require(balance >= pending, "Insufficient contract balance");
 
         // Update accounting
-        pendingRewards[token][msg.sender] = 0;
+        pendingRewards[token][rewardAddress] = 0;
         totalPendingByToken[token] -= pending;
         totalClaimedByToken[token] += pending;
 
         // Transfer tokens to user
-        require(erc20.transfer(msg.sender, pending), "Token transfer failed");
+        require(erc20.transfer(rewardAddress, pending), "Token transfer failed");
 
-        emit RewardClaimed(token, msg.sender, pending);
+        emit RewardClaimed(token, rewardAddress, pending);
     }
 
     /* ========== EMERGENCY / FUND MANAGEMENT ========== */
