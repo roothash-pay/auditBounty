@@ -10,15 +10,15 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "./EventRewardManagerStorage.sol";
 
 /**
- * @title AuditBountyManager
- * @notice Centralized bounty configuration, decentralized on-chain claiming
+ * @title EventRewardManager
+ * @notice Centralized reward configuration, decentralized on-chain claiming
  * @dev
- * - Project team (admin) decides bounty amounts and whitelisted recipients
+ * - Project team (admin) decides reward amounts and whitelisted recipients
  * - Recipients claim rewards themselves from this contract
- * - Supports multiple ERC20 tokens as bounty currencies
+ * - Supports multiple ERC20 tokens as reward currencies
  * - Upgradeable via UUPS
  */
-contract AuditBountyManager is Initializable, AccessControlUpgradeable, ReentrancyGuardUpgradeable, PausableUpgradeable, UUPSUpgradeable, AuditBountyManagerStorage {
+contract EventRewardManager is Initializable, AccessControlUpgradeable, ReentrancyGuardUpgradeable, PausableUpgradeable, UUPSUpgradeable, EventRewardManagerStorage {
     /* ========== CONSTRUCTOR & INITIALIZER ========== */
 
     /// @custom:oz-upgrades-unsafe-allow constructor

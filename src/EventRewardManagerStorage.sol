@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-contract AuditBountyManagerStorage {
+contract EventRewardManagerStorage {
     /* ========== ROLES ========== */
 
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");

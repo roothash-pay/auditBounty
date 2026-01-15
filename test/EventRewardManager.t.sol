@@ -2,7 +2,7 @@
 pragma solidity ^0.8.20;
 
 import { Test } from "forge-std/Test.sol";
-import { AuditBountyManager } from "../src/AuditBountyManager.sol";
+import { EventRewardManager } from "../src/EventRewardManager.sol";
 import { ERC1967Proxy } from "@openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol";
 import { IERC20 } from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
@@ -43,8 +43,8 @@ contract MockERC20 is IERC20 {
     }
 }
 
-contract AuditBountyManagerTest is Test {
-    AuditBountyManager bounty;
+contract EventRewardManagerTest is Test {
+    EventRewardManager bounty;
     MockERC20 tokenA;
     MockERC20 tokenB;
 
@@ -58,16 +58,16 @@ contract AuditBountyManagerTest is Test {
 
     function setUp() public {
         // Deploy implementation
-        AuditBountyManager implementation = new AuditBountyManager();
+        EventRewardManager implementation = new EventRewardManager();
 
         // Encode initializer call
-        bytes memory initData = abi.encodeWithSelector(AuditBountyManager.initialize.selector, admin);
+        bytes memory initData = abi.encodeWithSelector(EventRewardManager.initialize.selector, admin);
 
         // Deploy UUPS Proxy
         ERC1967Proxy proxy = new ERC1967Proxy(address(implementation), initData);
 
-        // Treat proxy as AuditBountyManager
-        bounty = AuditBountyManager(address(proxy));
+        // Treat proxy as EventRewardManager
+        bounty = EventRewardManager(address(proxy));
 
         // Deploy mock tokens
         tokenA = new MockERC20();
